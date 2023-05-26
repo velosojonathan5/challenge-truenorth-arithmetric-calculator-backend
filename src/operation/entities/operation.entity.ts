@@ -1,3 +1,7 @@
+import axios from 'axios';
+
+const RANDOM_STRING_URL = `https://www.random.org/integers/?num=1&min=1&max=200&col=1&base=10&format=plain&rnd=new`;
+
 export enum OperationType {
   ADDITION = 'ADDITION',
   SUBTRACTION = 'SUBTRACTION',
@@ -27,6 +31,13 @@ export const operations = [
   {
     type: OperationType.SQUARE_ROOT,
     calculate: (a: number) => Math.sqrt(a),
+  },
+  {
+    type: OperationType.RANDOM_STRING_GENERATION,
+    calculate: async () => {
+      const response = await axios.get(RANDOM_STRING_URL);
+      return response.data;
+    },
   },
 ];
 

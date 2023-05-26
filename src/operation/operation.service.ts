@@ -31,7 +31,10 @@ export class OperationService {
       throw new BadRequestException('user has no balance');
     }
 
-    const result = operationFunction.calculate(calculateDto.a, calculateDto.b);
+    const result = await operationFunction.calculate(
+      calculateDto.a,
+      calculateDto.b,
+    );
 
     const newRecord = new CreateRecordDto();
     newRecord.amount = operation.cost;
