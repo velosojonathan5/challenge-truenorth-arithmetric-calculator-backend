@@ -1,0 +1,7 @@
+INSERT INTO operations (id, type, cost) VALUES (1,'SET_BALANCE', 10),
+ (2,'ADDITION', 10),
+ (3,'SUBTRACTION', 10),
+ (4, 'MULTIPLICATION', 10),
+ (5, 'DIVISION', 10),
+ (6, 'SQUARE_ROOT', 10),
+ (7, 'RANDOM_STRING_GENERATION', 10);
